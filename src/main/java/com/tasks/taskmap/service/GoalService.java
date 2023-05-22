@@ -12,7 +12,7 @@ public interface GoalService {
 	Goal getGoalById(Long goalId);
 	
 	//Update goal
-	Goal updateGoal(Goal goal);
+	Goal updateGoal(Goal updatedGoal);
 	
 	//Delete goal
 	Goal deleteGoal(Long goalId);

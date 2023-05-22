@@ -18,26 +18,43 @@ private GoalRepository goalRepository;
 
 	//Create goal
 	public Goal createGoal(Goal goal) {
-
-		
+		return goalRepository.save(goal);
 	}
 			
 	//Retrieve goal
 	public Goal getGoalById(Long goalId) {
-
-		
+		if (goalRepository.findById(goalId).isPresent()){
+			return goalRepository.findById(goalId).get();
+		}
+		else {
+			return null;
+		}
 	}
 
 	//Update goal
-	public Goal updateGoal(Goal goal) {
-
-		
+	public Goal updateGoal(Long goalId, Goal updatedGoal) {
+		if(goalRepository.findById(goalId).isPresent()) {
+			Goal oldGoal= goalRepository.findById(goalId).get();
+			oldGoal.setDestinationCity(updatedGoal.getDestinationCity());
+			oldGoal.setTargetDistance(updatedGoal.getTargetDistance());
+			oldGoal.setTimeframe(updatedGoal.getTimeframe());
+	
+			return goalRepository.save(oldGoal);
+		}
+		else {
+			return null;
+		}
 	}
 		
 	//Delete goal
-	public Goal deleteGoal(Long goalId) {
+	public boolean deleteGoal(Long goalId) {
+		if(goalRepository.existsById(goalId)) {
+			goalRepository.deleteById(goalId);
+			return true;
+		}
 		
-
-		
+		else {
+			return false;
+		}
 	}
 }
