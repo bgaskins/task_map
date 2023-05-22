@@ -24,10 +24,11 @@ public class Goal {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="goal_id")
-	private int goalId;
+	private Long goalId;
 
-	@Column(name="user_id")
-	private String userId;
+	@ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 	
 	@Column(name="destination_city")
 	private String destinationCity;
@@ -36,7 +37,7 @@ public class Goal {
 	private String targetDistance;
 	
 	@Column(name="timeframe")
-	private Date timeframe;
+	private int timeframe;
 	
 	@Column(name="created_at")
 	@CreationTimestamp
@@ -45,10 +46,7 @@ public class Goal {
 	@Column(name="updated_at")
 	@UpdateTimestamp
 	private Date updatedAt;
-	
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
+
 	
 
 	
