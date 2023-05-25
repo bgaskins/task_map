@@ -43,12 +43,12 @@ public class GoalController {
 			
 		//PUT request to update goal
 		@PutMapping("/{goalId}")
-		public ResponseEntity<Object> updateGoal(@PathVariable("goalId") Long goalId, @RequestBody Goal goal) {
-				 Goal goalData = goalService.updateGoal(goalId, goal);			
+		public ResponseEntity<Goal> updateGoal(@PathVariable("goalId") Long goalId, @RequestBody Goal goal) {
+				Goal goalData = goalService.updateGoal(goalId, goal);			
 					if (goalData != null) {
-						return new ResponseEntity<Object>(goalData,HttpStatus.OK);
+						return new ResponseEntity<>(goalData,HttpStatus.OK);
 					} else {
-						return new ResponseEntity<Object>("No Movie Available to Update",HttpStatus.NOT_FOUND);
+						return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			  }
 		}
 		
@@ -56,7 +56,7 @@ public class GoalController {
 		//DELETE request to delete goal
 		@DeleteMapping("/{goalId}")
 		public ResponseEntity<String> deleteGoal(@PathVariable("goalId") Long goalId) {
-				  boolean result = goalService.deleteGoal();
+				  boolean result = goalService.deleteGoal(goalId);
 					if(result) {
 						return new ResponseEntity<String>("Goal deleted",HttpStatus.OK);
 					}else { 

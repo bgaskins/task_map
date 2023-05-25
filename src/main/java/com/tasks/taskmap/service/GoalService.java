@@ -16,6 +16,6 @@ public interface GoalService {
 	Goal updateGoal(Long goalId, Goal updatedGoal);
 	
 	//Delete goal
-	Goal deleteGoal(Long goalId);
+	boolean deleteGoal(Long goalId);
 
 }
