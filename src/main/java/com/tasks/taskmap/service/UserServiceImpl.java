@@ -3,7 +3,6 @@ package com.tasks.taskmap.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tasks.taskmap.model.Goal;
 import com.tasks.taskmap.model.User;
 import com.tasks.taskmap.repository.UserRepository;
 
