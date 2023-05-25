@@ -24,7 +24,7 @@ public class UserController {
 	}
 	//PUT request to update user
 	@GetMapping("/{userId}")
-	public User updateUser(@PathVariable("userId") Long userId, @RequestBody User user) {
+	public User updateUser(@PathVariable("userId") Long userId, @RequestBody User updatedUser) {
 		
 	}
 	//DELETE request to update user

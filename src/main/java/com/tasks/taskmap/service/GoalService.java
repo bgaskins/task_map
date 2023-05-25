@@ -4,6 +4,7 @@ import com.tasks.taskmap.model.Goal;
 
 public interface GoalService {
 	
+	//Service declarations for implementation
 	
 	//Create goal
 	Goal createGoal(Goal goal);
@@ -12,7 +13,7 @@ public interface GoalService {
 	Goal getGoalById(Long goalId);
 	
 	//Update goal
-	Goal updateGoal(Goal updatedGoal);
+	Goal updateGoal(Long goalId, Goal updatedGoal);
 	
 	//Delete goal
 	Goal deleteGoal(Long goalId);

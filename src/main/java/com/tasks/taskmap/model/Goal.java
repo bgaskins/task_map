@@ -30,6 +30,9 @@ public class Goal {
     @JoinColumn(name = "user_id")
     private User user;
 	
+	@Column(name="goal_title")
+	private String goalTitle;
+	
 	@Column(name="destination_city")
 	private String destinationCity;
 	
