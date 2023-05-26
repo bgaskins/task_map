@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Map</title>
+</head>
+
+<body>
+
+	<h1>Hi, <span th:text="${user.username}"></span>!</h1>
+	
+	<div th:if="${goals.isEmpty()}">
+		<p>No goals found.</p>
+	</div>
+	
+	<ul th:if="${not goals.isEmpty()}">
+		<li th:each="goal : ${goals}">
+			<span th:text="${goal.goalTitle}"></span> / <span th:text="${goal.destinationCity}"></span>
+		</li>
+	</ul>
+	
+	<form method="post" action="/goals/create" th:object="${newGoal}">
+		<input type="text" th:field="*{goalTitle}" placeholder="Goal Title" required />
+		<input type="text" th:field="*{destinationCity}" placeholder="Destination" required />
+		<button type="submit">Create Goal</button>
+	</form>
+</body>
+</head>
+	
+		

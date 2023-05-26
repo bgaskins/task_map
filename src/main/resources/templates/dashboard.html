@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<title>Task Map</title>
+</head>
+<body>
+
+<!--City map and blue bus image -->
+<div id="map-container" style="width: 500px; height: 300px; border: 1px solid #ccc;">
+ 	<img src="/city-map.jpg" alt="City Map">
+ 	<img id="bus" src="/blue-bus.jpg" alt="Blue Bus">
+</div>
+
+<script>
+	//Update the bus's position based on goal progress
+	function updateBusPosition(progress) {
+		
+		//Map width, goal duration, bus speed, new postion
+		const mapWidth = 800;//width in px
+		
+		//User enters duration
+		let goalDuration = parseInt("${goalDuration}"); 
+		
+		//Calculate bus speed 
+		let busSpeed = mapWidth / goalDuration;
+		
+		//Calculate the new bus position on map
+		let newPosition = progress * busSpeed; 
+		
+		//Update bus position
+		document.getElementById('bus').style.left = newPosition + 'px';
+		
+		let goalProgress = progress;
+		updateBusPosition(goalProgess);
+</script>
+
+
+
+</body>
+</html>
