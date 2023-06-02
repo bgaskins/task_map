@@ -7,7 +7,7 @@ import com.tasks.taskmap.model.Goal;
 import com.tasks.taskmap.repository.GoalRepository;
 
 @Service
-public class GoalServiceImpl {
+public class GoalServiceImpl implements GoalService{
 	
 private GoalRepository goalRepository;
 	
