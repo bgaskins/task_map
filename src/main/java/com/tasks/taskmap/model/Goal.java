@@ -20,6 +20,8 @@ import lombok.Data;
 @Data
 public class Goal {
 	
+	/* User, Goal, Destination City, Target distance, Time frame, 
+	Created/Updated time */
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
